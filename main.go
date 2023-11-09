@@ -43,7 +43,7 @@ func main() {
 	//set the routes and start the server
 	app.Use(recover.New())
 	app.Post("/", controller.Register)
-	app.Get("/:UID", controller.AccessTheURL)
+	app.Get("/:short", controller.AccessTheURL)
 	log.Fatal(app.Listen(":8000"))
 
 }

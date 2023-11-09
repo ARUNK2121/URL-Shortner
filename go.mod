@@ -5,6 +5,7 @@ go 1.21.0
 require (
 	github.com/Shopify/goreferrer v0.0.0-20181106222321-ec9c9a553398 // indirect
 	github.com/andybalholm/brotli v1.0.5 // indirect
+	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 // indirect
 	github.com/aymerick/douceur v0.2.0 // indirect
 	github.com/chris-ramon/douceur v0.2.0 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
