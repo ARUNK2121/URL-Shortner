@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	controller "github.com/ARUNK2121/url_shortner/Controller"
@@ -22,7 +23,9 @@ func main() {
 	//load credentials into config struct
 	config, err := config.Credentials()
 	if err != nil {
+		fmt.Println("error is:", err.Error())
 		log.Fatal("error getting the credentials from env file")
+
 	}
 
 	//create new fiber engine
@@ -35,7 +38,7 @@ func main() {
 	}
 
 	//get controller for handling routes
-	controller := controller.NewController(db)
+	controller := controller.NewController(db, config)
 
 	//set the routes and start the server
 	app.Use(recover.New())
