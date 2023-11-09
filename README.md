@@ -1,6 +1,4 @@
-Certainly! Here's the provided markdown converted into a proper README.md:
 
-```markdown
 # Lightning-Fast URL Shortener with Golang Fiber and Redis
 
 A high-performance URL shortener built with Golang using the Fiber web framework and Redis as the database.
@@ -71,4 +69,3 @@ A high-performance URL shortener built with Golang using the Fiber web framework
       "error": "Invalid URL"
     }
     ```
-```
