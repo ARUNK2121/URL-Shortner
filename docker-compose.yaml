@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  redis:
+    image: redis
+    restart: always
+    networks:
+      - short-it
+
+  url_shortner:
+    image: url_shortner:v1
+    restart: on-failure
+    depends_on:
+      - redis
+    networks:
+      - short-it
+    ports:
+      - "8000:8000"
+
+networks:
+  short-it:
+    driver: bridge
