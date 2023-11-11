@@ -1,13 +1,16 @@
 version: "3.9"
+
 services:
   redis:
     image: redis
-    restart: always
+    container_name: redis
     networks:
       - short-it
+    volumes:
+      - redis-data:/data
 
   url_shortner:
-    image: url_shortner:v1
+    image: url
     restart: on-failure
     depends_on:
       - redis
@@ -15,6 +18,11 @@ services:
       - short-it
     ports:
       - "8000:8000"
+    environment:
+      - DB_PORT=redis:6379  # Set the DB_PORT environment variable
+
+volumes:
+  redis-data:
 
 networks:
   short-it:
